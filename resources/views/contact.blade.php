@@ -8,8 +8,19 @@
 
     <p>Welcome to our contact page.</p>
 
-    <p>Email: highoverride@gmail.com</p>
-    <p>Phone: 0992-068-9188</p>
-    <p>Address: Lucena City, Philippines</p>
+    <x-card
+        title="Email"
+        content="highoverride@gmail.com"
+    />
+
+    <x-card
+        title="Phone"
+        content="0992-068-9188"
+    />
+
+    <x-card
+        title="Address"
+        content="Lucena City, Philippines"
+    />
 
 @endsection

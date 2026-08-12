@@ -19,7 +19,6 @@
             color: #333;
         }
 
-
         /* HEADER */
 
         header {
@@ -32,7 +31,6 @@
         header h1 {
             margin: 0 0 15px 0;
         }
-
 
         /* NAVIGATION */
 
@@ -47,7 +45,6 @@
             text-decoration: underline;
         }
 
-
         /* MAIN */
 
         main {
@@ -55,7 +52,6 @@
             max-width: 800px;
             margin: 40px auto;
         }
-
 
         /* CARD COMPONENT */
 
@@ -77,7 +73,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
         }
 
-
         /* CARD TITLE */
 
         .card h3 {
@@ -86,7 +81,6 @@
             font-size: 24px;
         }
 
-
         /* CARD CONTENT */
 
         .card p {
@@ -94,7 +88,6 @@
             color: #555;
             font-size: 18px;
         }
-
 
         /* FOOTER */
 
@@ -108,7 +101,6 @@
     </style>
 </head>
 
-
 <body>
 
     <header>
@@ -118,17 +110,16 @@
         <nav>
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('/contact') }}">Contact</a>
+            <a href="{{ route('products.index') }}">Products</a>
         </nav>
 
     </header>
-
 
     <main>
 
         @yield('content')
 
     </main>
-
 
     <footer>
 

@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Add Product')
+@section('title', 'Edit Product')
 
 @section('content')
-
     <p class="eyebrow">Inventory</p>
-    <h2>Add product</h2>
-    <p class="page-intro">Add the details your team needs to find and manage this item.</p>
+    <h2>Edit product</h2>
+    <p class="page-intro">Keep this product's information accurate and useful.</p>
 
-    <form class="form-card card" action="{{ route('products.store') }}" method="POST">
-
+    <form class="form-card card" action="{{ route('products.update', $product) }}" method="POST">
         @csrf
+        @method('PUT')
 
         <div class="field">
             <label for="name">Product Name</label>
@@ -19,7 +18,7 @@
                 type="text"
                 id="name"
                 name="name"
-                value="{{ old('name') }}"
+                value="{{ old('name', $product->name) }}"
             >
             @error('name') <span class="field-error">{{ $message }}</span> @enderror
         </div>
@@ -29,11 +28,7 @@
         <div class="field">
             <label for="description">Description</label>
             <br>
-            <textarea
-                id="description"
-                name="description"
-                rows="4"
-            >{{ old('description') }}</textarea>
+            <textarea id="description" name="description" rows="4">{{ old('description', $product->description) }}</textarea>
             @error('description') <span class="field-error">{{ $message }}</span> @enderror
         </div>
 
@@ -47,7 +42,7 @@
                 id="price"
                 name="price"
                 step="0.01"
-                value="{{ old('price') }}"
+                value="{{ old('price', $product->price) }}"
             >
             @error('price') <span class="field-error">{{ $message }}</span> @enderror
         </div>
@@ -61,17 +56,13 @@
                 type="number"
                 id="quantity"
                 name="quantity"
-                value="{{ old('quantity') }}"
+                value="{{ old('quantity', $product->quantity) }}"
             >
             @error('quantity') <span class="field-error">{{ $message }}</span> @enderror
         </div>
 
         <br>
 
-        <button type="submit">
-            Save Product
-        </button>
-
+        <button type="submit">Update Product</button>
     </form>
-
 @endsection
